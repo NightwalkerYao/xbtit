@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -51,7 +51,7 @@ window.location='index.php?page=usercp&uid=<?php echo $CURUSER["uid"]; ?>&do=pm&
 <?php
 $style=style_list();
 $langue=language_list();
-print("<div class='col-md-6'><div class='panel panel-default'><div class='panel-heading'><h4><i class='fa fa-fw fa-user'></i>".$language['WELCOME_BACK']." ".$CURUSER['username']."</h4></div><div class='panel-body' align='center'>");
+print("<div class='col l6 m6 s12'><div class='panel panel-default'><div class='panel-heading'><h5><i class='material-icons left'>account_circle</i>".$language['WELCOME_BACK']." <span class='fake-blue-light'>".$CURUSER['username']."</span></h5></div><div class='panel-body' align='center'>");
 print("<td style=\"text-align:left;\" align=\"left\"><b>".$language["USER_LEVEL"].": ".$CURUSER["level"]."</b></td></tr><tr> ||\n");
       if(substr($FORUMLINK, 0, 3)=="smf")
           $resmail=get_result("SELECT `unread".(($FORUMLINK=="smf")?"M":"_m")."essages` `ur` FROM `{$db_prefix}members` WHERE ".(($FORUMLINK=="smf")?"`ID_MEMBER`":"`id_member`")."=".$CURUSER["smf_fid"],true,$btit_settings['cache_duration']);
@@ -105,7 +105,7 @@ else
     if (!isset($user)) $user = '';
     ?>
     <form action="index.php?page=login" name="login" method="post">
-    <table class="lista" border="0" width="100%" cellpadding="4" cellspacing="1">
+    <table class="lista browser-default" border="0" width="100%" cellpadding="4" cellspacing="1">
     <tr>
     <td class="lista" align="left">
       <table border="0" cellpadding="0" cellspacing="10">

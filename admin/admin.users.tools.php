@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -396,7 +396,7 @@ switch ($action) {
                 $pattern1='#[a-z]#';
                 $pattern2='#[A-Z]#';
                 $pattern3='#[0-9]#';
-                $pattern4='/[¬!"£$%^&*()`{}\[\]:@~;\'#<>?,.\/\\-=_+\|]/';
+                $pattern4='/[ï¿½!"ï¿½$%^&*()`{}\[\]:@~;\'#<>?,.\/\\-=_+\|]/';
 
                 for($pass_position=0;$pass_position<=$pass_end;$pass_position++)
                 {

@@ -1,0 +1,39 @@
+html{min-width:980px;}
+body{display: inline;margin: auto;font-family: Ubuntu,verdana,serif; background-color: #1b252f;font-size: 10pt}
+header,.dropdown-content,.gotoLogout{background-color: #212f3c;}
+.custom-show-off{background-color: rgba(45, 56, 66, 0.9)}
+nav.top-nav-bar{background-color: rgba(0, 212, 255, 0.6);border-top: 2px solid black;border-bottom:2px solid black; box-sizing: border-box;height: 54px;}
+.gotoLogin{background-color: #2d3842}
+.top-nav-bar>div>ul>li>a{background-color: #2a313c;margin: 1px; height: 48px;padding: 0 5px;border-radius: 8px 8px 0 0;}
+.dropdown-content li>a, .dropdown-content li>span{line-height: 28px; padding: 2px 8px;font-size:9pt;border-bottom: 1px solid #00d4ff;}
+.dropdown-content li,.dropdown-content li:hover,.dropdown-content li.active{line-height: 24px;min-height: 24px;text-align: center;}
+.dropdown-content .divider,.dropdown-content .divider:hover,.dropdown-content .divider:active{max-height: 1px; border-color: #2d3842}
+.top-nav-bar>div>ul>li>a .material-icons{font-size: 14pt;margin-right: 2px; max-height: 85%}
+.info-tracker{background-color: #212f3c}
+.fake-blue-light{color: #00d4ff}
+.collection.in-lateral-lft{border-color: transparent;}
+.collection.in-lateral-lft .collection-item{background-color: #2d3842; border-bottom-color: #00d4ff}
+.collection.in-lateral-lft a.collection-item:hover{background-color: rgba(42, 49, 60, 0.6)}
+.minimal-table th, .minimal-table td{padding: 4px 6px;}
+.formulaire{background-color: rgba(42, 49, 60, 0.7)}
+.recherche{line-height: 24px; display: block;}
+.recherche #search,.recherche #search:focus{width: 80%; color: #B0BEC5; padding: 0 15px;}
+.recaler{padding-left: 2em}
+.recherche #search:focus{background-color: rgba(0, 212, 255, 0.2)}
+.bg-dark-neon{background: #0d92b1}
+.no-margin-top{margin-top: 0}
+.no-margin-bottom{margin-bottom: 0}
+.bg-like-head{background-color: #212f3c}
+.bold{font-weight: bold;}
+table.highlight tr td:hover{background-color: rgba(42, 49, 60, 0.45)}
+table.liste-fichiers{}
+table.liste-fichiers td{font-size:9pt;height: 20px; padding: 2px 8px;}
+#comments{color:#b0bec5;}
+.ligne-commentaires{border-bottom: 3px solid #1b252f;}
+.nouvelles h1{font-size: 24pt;}
+.sous-nvles{font-size: 10pt; padding-left: 2em;}
+.torrent-infos .row{margin-bottom: 7px; line-height: 1.3}
+.formulaire input.champ-de-saisie{width: 300px; padding: 0 15px; border-radius: 5px; margin: 0; line-height: 1; font-size: 10pt;background-color: rgba(0, 212, 255, 0.2) !important; border:none; position: static; top: 0; left: 0; bottom: 0;}
+.user-space{font-size: 11pt;}
+.block{display: block; clear: both;}
+.italic{font-style: italic;}

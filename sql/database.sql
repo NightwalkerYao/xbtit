@@ -551,9 +551,7 @@ INSERT INTO `{$db_prefix}language` (`id`, `language`, `language_url`) VALUES
 (19, 'Arabic','language/arabic'),
 (20, 'Danish','language/danish'),
 (21, 'Chinese-Simplified','language/chinese'),
-(22, 'Bengali','language/bangla'),
-(23, 'Turkish', 'language/turkish'),
-(24, 'Czech', 'language/czech');
+(22, 'Bengali','language/bangla');
 
 -- --------------------------------------------------------
 
@@ -900,7 +898,7 @@ CREATE TABLE `{$db_prefix}settings` (
 INSERT INTO `{$db_prefix}settings` (`key`, `value`) VALUES
 ('name', 'BTI-Tracker'),
 ('url', 'http://127.0.0.1/dev'),
-('announce', 'YToxOntpOjA7czoyOToiaHR0cDovL2xvY2FsaG9zdC9hbm5vdW5jZS5waHAiO30='),
+('announce', 'http://localhost/announce.php'),
 ('email', 'admin@localhost'),
 ('torrentdir', 'torrents'),
 ('external', 'true'),

@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -77,7 +77,7 @@ if ($_POST["info_hash"]) {
      exit();
      }
 	 else{	 
-  do_sqlquery("INSERT INTO {$TABLE_PREFIX}comments (added,text,ori_text,user,info_hash) VALUES (NOW(),\"$comment\",\"$comment\",\"$user\",\"" . mysqli_query($GLOBALS['conn'],stripslashes($_POST["info_hash"])) . "\")",true);
+  do_sqlquery("INSERT INTO {$TABLE_PREFIX}comments (added,text,ori_text,user,info_hash) VALUES (NOW(),\"$comment\",\"$comment\",\"$user\",\"" . mysqli_real_escape_string($GLOBALS['conn'],StripSlashes($_POST["info_hash"])) . "\")",true);
   redirect("index.php?page=torrent-details&id=" . stripslashes($_POST["info_hash"])."#comments");
   die();
   }

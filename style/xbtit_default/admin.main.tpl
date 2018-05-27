@@ -52,7 +52,7 @@ function Show_News()
       <tr>
        <td valign="top">
            <div id="loading" style="display:none;">
-           Please wait while Trying to fetch latest news/version from <a href="http://www.btiteam.org">Btiteam</a>
+           Please wait while Trying to fetch latest news/version from <a href="http://dpwsmedia.com">DPWS Media</a>
            <br />
            <img src="images/ajax-loader.gif" alt="" title="ajax-loader" />
            </div>
@@ -65,17 +65,17 @@ function Show_News()
     <table border="0" class="lista" align="center" width="100%">
            <tr><td class="block" align="center"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                        <input type="hidden" name="cmd" value="_donations">
-                       <input type="hidden" name="business" value="paypal@btiteam.org">
+                       <input type="hidden" name="business" value="payment@dpwsmedia.com">
                        <input type="hidden" name="lc" value="GB">
-                       <input type="hidden" name="item_name" value="BTITeam/XBTIT Donation">
+                       <input type="hidden" name="item_name" value="DPWS Media/XBTIT Donation">
                        <input type="hidden" name="no_note" value="0">
-                       <input type="hidden" name="currency_code" value="EUR">
+                       <input type="hidden" name="currency_code" value="GBP">
                        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
                        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
                    </form>
                </td></tr>
-           <tr><td class="lista" align="center">Please feel free to donate to btiteam to help ongoing support development of XBTIT</td></tr><br />
+           <tr><td class="lista" align="center">Please feel free to donate to DPWS Media to help ongoing support development of XBTIT</td></tr><br />
            <tr><td class="block" align="center"><b>Some statistic/system info:</b></td></tr>
            <tr><td class="lista"><tag:admin.lastsanity /></td></tr>
            <tr><td class="lista"><tag:admin.lastscrape /></td></tr>
@@ -85,7 +85,7 @@ function Show_News()
            <tr><td class="lista"><tag:admin.cache_ok /></td></tr>
            <tr><td class="lista"><tag:admin.badwords_ok /></td></tr>
            <tr><td class="blocklist"><tag:admin.infos /></td></tr>
-           <tr><td class="blocklist" align="center"> <a href="http://www.btiteam.org" target="_blank"><img src="images/xbtit.jpg" /></a></td></tr>
+           <tr><td class="blocklist" align="center"> <a href="http://dpwsmedia.com" target="_blank"><img src="images/xbtit.jpg" /></a></td></tr>
     </table>
   </td>
   </tr>

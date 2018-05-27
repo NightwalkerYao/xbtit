@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -119,7 +119,8 @@ function read_blocks()
                 $tops[$t]["title"]=$language[$blk["title"]].
                     "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $tops[$t]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $tops[$t]["idx"] = "chbox".$t;
+                $tops[$t]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"chbox".$t."\" />";
                 $t++;
                 break;
                 
@@ -150,9 +151,10 @@ function read_blocks()
                 $dropdown[$d]["combo"].="\n</select>";
                 $dropdown[$d]["status"]=$blk["status"];
                 $dropdown[$d]["title"]=$language[$blk["title"]].
-                    "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
+                    "--&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $dropdown[$d]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $dropdown[$d]["chbox"] = "dpbox".$d;
+                $dropdown[$d]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"dpbox".$d."\" />";
                 $d++;
                 break;
 								
@@ -185,7 +187,8 @@ function read_blocks()
                 $extras[$e]["title"]=$language[$blk["title"]].
                     "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $extras[$e]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $extras[$e]["chbox"] = "extracbx".$e;
+                $extras[$e]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"extracbx".$e."\" />";
                 $e++;
                 break;			
 
@@ -219,7 +222,8 @@ function read_blocks()
                 $lefts[$l]["title"]=$language[$blk["title"]].
                     "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $lefts[$l]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $lefts[$l]["chbox"] = "lftcbx".$l;
+                $lefts[$l]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"lftcbx".$l."\" />";
                 $l++;
                 break;
 
@@ -254,7 +258,8 @@ function read_blocks()
                 $centers[$c]["title"]=$language[$blk["title"]].
                     "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $centers[$c]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $centers[$c]["chbox"] = "centercbx".$c;
+                $centers[$c]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"centercbx".$c."\" />";
                 $c++;
                 break;
 
@@ -288,7 +293,8 @@ function read_blocks()
                 $rights[$r]["title"]=$language[$blk["title"]].
                     "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $rights[$r]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $rights[$r]["chbox"] = "rightcbx".$r;
+                $rights[$r]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"rightcbx".$r."\" />";
                 $r++;
                 break;
 
@@ -322,7 +328,8 @@ function read_blocks()
                 $bottom[$b]["title"]=$language[$blk["title"]].
                     "&nbsp;&nbsp;<a href=\"index.php?page=admin&amp;user=".$CURUSER["uid"]."&amp;code=".$CURUSER["random"]."&amp;do=blocks&amp;action=edit&amp;id=".$blk["blockid"]."\">".
                     image_or_link("$STYLEPATH/images/edit.png","",$language["EDIT"])."</a>";
-                $bottom[$b]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." />";
+                $bottom[$b]["chbox"] = "btmcbx".$b;
+                $bottom[$b]["check"]="<input name=\"status_".$blk["blockid"]."\" type=\"checkbox\" ".($blk["status"]=="1"?"checked=\"checked\"":"")." id=\"btmcbx".$b."\" />";
                 $b++;
                 break;
           }

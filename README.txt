@@ -13,7 +13,7 @@ To upgrade your modified Btit 1.4.x to xbtit it is necessary to upgrade your cur
 xbtit has two bittorrent tracker systems - a PHP tracker and xbtt. The PHP tracker is designed for platforms without access to the system root, or where your tracker is not expected to run with greater than 5-10,000 peers. A PHP tracker can generate a high volume of TCP traffic, potentially millions of hits per day on port 80, you have been cautioned. The second tracker system is xbtt by Olaf van der Spek. xbtt is an efficient C++ tracker capable of running millions of peers at very low overhead, you are recommended in all cases to use the xbtt system
 
 The opensource free support forum is
-BTITeam http://www.btiteam.org
+DPWS Media LTD http://dpwsmedia.com
 
 #----------------#
 # MAJOR FEATURES #
@@ -47,8 +47,7 @@ BTITeam http://www.btiteam.org
 #----------------#
 # DOCUMENTATION  #
 #----------------#
-We are working on a wiki which will give information, installation steps, how to, etc ...
-at the moment it is a "work in progress" site: http://wiki.btiteam.org
+Still a work in progress but will be launched very soon.
 
 #---------#
 # CREDITS #
@@ -76,9 +75,9 @@ Thanks to style maker:
 TreeTopClimber
 
 Founders: Lupin
-Maintainers: Gh0st4unt3r, King Cobra
+Maintainers: DPWS Media LTD, Gh0st4unt3r, Mpow3ll, King Cobra
 
 Many thanks to all guys who participated for the testing and for addons/styles etc.
 
-Btiteam 
+DPWS Media LTD
 

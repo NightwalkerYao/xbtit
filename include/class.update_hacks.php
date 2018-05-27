@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -29,9 +29,6 @@
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 ////////////////////////////////////////////////////////////////////////////////////
-require_once 'vendor/autoload.php';
-use splitbrain\PHPArchive\Tar;
-
 class update_hacks
       {
 
@@ -50,8 +47,11 @@ class update_hacks
       var $ftp_files_to_chmod=array();
       var $files_to_backup=array();
 
-      function __construct()
-      {
+      function update_hacks()
+            {
+            
+            include(__DIR__."/class.archive.php");
+
             // reset all var
             $this->file=array();
             $this->errors=array();
@@ -164,7 +164,7 @@ class update_hacks
 
             $realfile=(str_replace("\\","/",$realfile));
 
-            $realfile = str_replace(str_replace("\\","/",$THIS_BASEPATH),$this->ftp_basedir,$realfile);
+            $realfile = str_replace(str_replace("\\","/",$THIS_BASEPATH)."/",$this->ftp_basedir,$realfile);
 
             return $realfile;
 
@@ -1129,11 +1129,17 @@ class update_hacks
         if (count($this->files_to_backup)==0)
            return true;
 
-        $archive = new Tar();
-		$archive->create($this->hack_path."/backup-".date("d-m-Y_H-i-s").".tar");
+        $archive=new tar_file($this->hack_path."/backup-".date("d-m-Y_H-i-s").".tar");
+        $archive->set_options(array("basedir"=>"$THIS_BASEPATH"));
         foreach ($this->files_to_backup as $ftb)
-           $archive->addFile($ftb);
-        $archive->close();
+           $archive->add_files($ftb);
+        $archive->create_archive();
+
+        if (count($archive->errors) > 0)
+          {
+          $this->_err_message("Unable to write in $this->hack_path","Folder","Check chmod+chown for $this->hack_path");
+          return false;
+        }
 
         return true;
         

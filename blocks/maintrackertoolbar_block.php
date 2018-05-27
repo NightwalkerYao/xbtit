@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -79,11 +79,11 @@ else
    $upld=0+$row["upld"];
    $traffic=makesize($dled+$upld);
 ?>
-       <div class="row">
-       <div class="col-md-6">
+       <div class="row info-tracker">
+       <div class="col l6 m6 s12">
        <div class="panel panel-default">
        <div class="panel-heading">
-          <h4><i class="fa fa-fw fa-files-o"></i><?php echo $language["BLOCK_INFO"]; ?> </h4>
+          <h5><i class="material-icons left">insert_chart</i><?php echo $language["BLOCK_INFO"]; ?> </h5>
        </div>
        <div class="panel-body" align="center">
 <b><?php echo $language["MEMBERS"]; ?>:</b>&nbsp;&nbsp;<?php echo $users; ?>&nbsp;||&nbsp;

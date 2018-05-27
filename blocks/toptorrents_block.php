@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -50,17 +50,12 @@ else
      $row = get_result($sql,true,$btit_settings['cache_duration']);
   ?>
 
-        <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4><i class="fa fa-fw fa-files-o"></i>Top Torrents</h4>
-        </div>
-        <div class="panel-body">
-
-        <table cellpadding="4" cellspacing="1" width="100%">
+        <div class="derniers-tliste card-panel transparent minimal-table">
+            <h4><i class="material-icons left cyan-text" style="font-size: 27pt;">star</i>Torrents du moment</h4>
+        <table cellpadding="4" cellspacing="1" width="100%" class="highlighter stripped">
   <tr>
-      <td align="center" width="20" class="header">&nbsp;<?php echo $language["DOWN"]; ?>&nbsp;</td>
-    <td align="center" width="55%" class="header">&nbsp;<?php echo $language["TORRENT_FILE"]; ?>&nbsp;</td>
     <td align="center" width="45" class="header">&nbsp;<?php echo $language["CATEGORY"]; ?>&nbsp;</td>
+    <td align="center" width="55%" class="header">&nbsp;<?php echo $language["TORRENT_FILE"]; ?>&nbsp;</td>
 <?php
 if (max(0,$CURUSER["WT"])>0)
     print("<td align=\"center\" width=\"20\" class=\"header\">&nbsp".$language["WT"]."&nbsp;</td>");
@@ -81,19 +76,15 @@ if (max(0,$CURUSER["WT"])>0)
 
           if ( strlen($data["hash"]) > 0 )
           {
-      echo "\n\t<td align=\"center\" class=\"lista\" width=\"20\" style=\"text-align: center;\">";
-      echo "<a class=\"toptor\" href=\"download.php?id=".$data["hash"]."&amp;f=" . rawurlencode($data["filename"]) . ".torrent\"><img src='images/torrent.gif' border='0' alt='".$language["DOWNLOAD_TORRENT"]."' title='".$language["DOWNLOAD_TORRENT"]."' /></a>";
-      echo "</td>";
-
      $data["filename"]=unesc($data["filename"]);
      $filename=cut_string($data["filename"],((int)$btit_settings["cut_name"]));
 
+      echo "\t<td align=\"center\" class=\"lista\" width=\"45\" style=\"text-align: center;\"><a class=\"toptor\" href=\"index.php?page=torrents&amp;category=$data[catid]\">" . image_or_link( ($data["image"] == "" ? "" : "$STYLEPATH/images/categories/" . $data["image"]), "", $data["cname"]) . "</a></td>";
+      
      if ($GLOBALS["usepopup"])
-        echo "\t<td width=\"55%\" class=\"lista\" style=\"padding-left:10px;\"><a class=\"toptor\" href=\"javascript:popdetails('index.php?page=torrent-details&amp;id=" . $data['hash'] . "');\" title=\"" . $language["VIEW_DETAILS"] . ": " . $data["filename"] . "\">" . $filename . "</a>".($data["external"]=="no"?"":" (<span style=\"color:red\">EXT</span>)")."</td>";
+        echo "\t<td width=\"55%\" class=\"lista\" style=\"padding-left:10px;\"><a class=\"toptor\" href=\"javascript:popdetails('index.php?page=torrent-details&amp;id=" . $data['hash'] . "');\" title=\"" . $language["VIEW_DETAILS"] . ": " . $data["filename"] . "\">" . $filename . "</a></td>";
      else
-        echo "\t<td width=\"55%\" class=\"lista\" style=\"padding-left:10px;\"><a class=\"toptor\" href=\"index.php?page=torrent-details&amp;id=" . $data['hash'] . "\" title=\"" . $language["VIEW_DETAILS"] . ": " . $data["filename"] . "\">" . $filename . "</a>".($data["external"]=="no"?"":" (<span style=\"color:red\">EXT</span>)")."</td>";
-
-     echo "\t<td align=\"center\" class=\"lista\" width=\"45\" style=\"text-align: center;\"><a class=\"toptor\" href=\"index.php?page=torrents&amp;category=$data[catid]\">" . image_or_link( ($data["image"] == "" ? "" : "$STYLEPATH/images/categories/" . $data["image"]), "", $data["cname"]) . "</a></td>";
+        echo "\t<td width=\"55%\" class=\"lista\" style=\"padding-left:10px;\"><a class=\"toptor\" href=\"index.php?page=torrent-details&amp;id=" . $data['hash'] . "\" title=\"" . $language["VIEW_DETAILS"] . ": " . $data["filename"] . "\">" . $filename . "</a></td>";
 
     //waitingtime
     // only if current user is limited by WT
@@ -161,7 +152,7 @@ if (max(0,$CURUSER["WT"])>0)
     echo "<tr><td class=\"lista\" colspan=\"9\" align=\"center\" style=\"text-align: center;\">" . $language["NO_TORRENTS"] . "</td></tr>";
   }
 
-  print("</table></div></div>");
+  print("</table></div>");
 
         block_end();
 
