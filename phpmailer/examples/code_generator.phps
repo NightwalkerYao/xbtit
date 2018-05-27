@@ -173,10 +173,10 @@ try {
         $example_code .= "\n\$body = <<<'EOT'\n" . htmlentities($body) . "\nEOT;";
 
         $mail->WordWrap = 78; // set word wrap to the RFC2822 limit
-        $mail->msgHTML($body, dirname(__FILE__), true); //Create message bodies and embed images
+        $mail->msgHTML($body, __DIR__, true); //Create message bodies and embed images
 
         $example_code .= "\n\$mail->WordWrap = 78;";
-        $example_code .= "\n\$mail->msgHTML(\$body, dirname(__FILE__), true); //Create message bodies and embed images";
+        $example_code .= "\n\$mail->msgHTML(\$body, __DIR__, true); //Create message bodies and embed images";
 
         $mail->addAttachment('images/phpmailer_mini.png', 'phpmailer_mini.png'); // optional name
         $mail->addAttachment('images/phpmailer.png', 'phpmailer.png'); // optional name

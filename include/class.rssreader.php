@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -31,7 +31,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
 class rss_reader {
-    function __construct() {
+    function rss_reader() {
         // constructor
     }
 

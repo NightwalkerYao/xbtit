@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -32,29 +32,28 @@
 
 global $CURUSER, $FORUMLINK, $language;
 
-   print("<table class=\"lista\" width=\"100%\" cellspacing=\"0\">\n<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php\">".$language["MNU_INDEX"]."</a></td></tr>\n");
+   print("<div class='collection in-lateral-lft'><a class=\"menu collection-item\" href=\"index.php\"><i class='material-icons left'>home</i>".$language["MNU_INDEX"]."</a>\n");
 
    if ($CURUSER["view_torrents"]=="yes")
       {
-      print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=torrents\">".$language["MNU_TORRENT"]."</a></td></tr>\n");
-      print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=extra-stats\">".$language["MNU_STATS"]."</a></td></tr>\n");
+      print("<a class=\"menu collection-item\" href=\"index.php?page=torrents\"><i class='material-icons left'>cloud_download</i>".$language["MNU_TORRENT"]."</a>\n");
+      print("<a class=\"menu collection-item\" href=\"index.php?page=extra-stats\"><i class='material-icons left'>pie_chart</i>".$language["MNU_STATS"]."</a>\n");
       }
    if ($CURUSER["can_upload"]=="yes")
-      print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=upload\">".$language["MNU_UPLOAD"]."</a></td></tr>\n");
+      print("<a class=\"menu collection-item\" href=\"index.php?page=upload\"><i class='material-icons left'>cloud_upload</i>".$language["MNU_UPLOAD"]."</a>\n");
    if ($CURUSER["view_users"]=="yes")
-      print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=users\">".$language["MNU_MEMBERS"]."</a></td></tr>\n");
+      print("<a class=\"menu collection-item\" href=\"index.php?page=users\"><i class='material-icons left'>account_box</i>".$language["MNU_MEMBERS"]."</a>\n");
    if ($CURUSER["view_news"]=="yes")
-      print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=viewnews\">".$language["MNU_NEWS"]."</a></td></tr>\n");
+      print("<a class=\"menu collection-item\" href=\"index.php?page=viewnews\"><i class='material-icons left'>subtitles</i>".$language["MNU_NEWS"]."</a>\n");
    if ($CURUSER["view_forum"]=="yes")
       {
         if ($FORUMLINK=="" || $FORUMLINK=="internal" || substr($FORUMLINK,0,3)=="smf" || $FORUMLINK=="ipb")
-           print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=forum\">".$language["MNU_FORUM"]."</a></td></tr>\n");
+           print("<a class=\"menu collection-item\" href=\"index.php?page=forum\"><i class='material-icons left'>public</i>".$language["MNU_FORUM"]."</a>\n");
         else
-            print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"".$FORUMLINK."\">".$language["MNU_FORUM"]."</a></td></tr>\n");
+            print("<a class=\"menu collection-item\" href=\"".$FORUMLINK."\"><i class='material-icons left'>public</i>".$language["MNU_FORUM"]."</a>\n");
       }
    if ($CURUSER["uid"]==1 || !$CURUSER)
-      print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"index.php?page=login\">".$language["LOGIN"]."</a></td></tr>\n</table>\n");
+      print("<a class=\"menu collection-item\" href=\"index.php?page=login\"><i class='material-icons left'>power</i>".$language["LOGIN"]."</a>\n</div>\n");
    else
-       print("<tr><td class=\"blocklist\" align=\"center\"><a class=\"menu\" href=\"logout.php\">".$language["LOGOUT"]."</a></td></tr>\n</table>\n");
-
+       print("<a class=\"menu collection-item\" href=\"logout.php\"><i class='material-icons left'>power_settings_new</i>".$language["LOGOUT"]."</a>\n</div>\n");
 ?>

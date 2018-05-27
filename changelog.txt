@@ -1,9 +1,16 @@
+v.2.5.4
+-------------------
+Side Blocks Returned
+Fixed some errors
+Processed DPWS Media change over from BTITeam
+Fixed Some Deprecated PHP Warnings
+
 v.2.5.0
 -------------------
 Fixed some mysqli functions in account.php - Spotted by King Cobra
 Updated to a fresh look mobile & desktop friendly on the default design
 Using bootstrap/fontawesome for the default design
-Added btiteam donation button in admin
+Added DPWS Media LTD donation button in admin
 Fixed added new forum mysql error when sort is blank
 Error Reporting error_reporting(E_ALL & ~E_NOTICE); has been added
 MYSQLi Functions fixed removing previous tool based changes
@@ -31,7 +38,7 @@ Added acp switch to show comments & rating in torrent list by DiemThuy
 Removed unneeded php 4 mailer folder
 Added XBTIT favicon by DJplamen
 Added last phpmailer rev
-added XBTIT image/BTITEAM link in acp
+added XBTIT image/DPWS Media LTD link in acp
 
 20/04/2015
 added function mysqli_result
@@ -151,7 +158,7 @@ FIXES:
 - secured user's data change (email, etc.) in usercp.php 
 - upload/download bug (announce.php) (https://sourceforge.net/tracker/index.php?func=detail&aid=1729127&group_id=146822&atid=766508)
 - syntax error (details.php)
-- category fix (edit.php) (http://www.btiteam.org/smf/index.php?topic=8009.0)
+- category fix (edit.php) (http://dpwsmedia.com/smf/index.php?topic=8009.0)
 - syntax error (login.php)
 - correct error when image code is enabled (recover.php)(http://sourceforge.net/tracker/index.php?func=detail&aid=1733872&group_id=146822&atid=766508)
 - correct problem with extras smilies (shoutbox_block.php)

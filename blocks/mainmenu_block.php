@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -32,6 +32,7 @@
    global $CURUSER, $FORUMLINK, $language;
 
 ?>
+
 <table cellpadding="4" cellspacing="1" width="100%" border="0" align="center" style="border-bottom:0px solid;">
   <tr>
 <?php

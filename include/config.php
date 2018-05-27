@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -98,7 +98,7 @@ function apply_default_settings() {
     if (!array_key_exists('external_update',$btit_settings)) $btit_settings['external_update']=0;
     if (!array_key_exists('forum',$btit_settings)) $btit_settings['forum']='';
     if (!array_key_exists('external',$btit_settings)) $btit_settings['external']=true;
-    if (!array_key_exists('gzip',$btit_settings)) $btit_settings['gzip']=false;
+    if (!array_key_exists('gzip',$btit_settings)) $btit_settings['gzip']=true;
     if (!array_key_exists('debug',$btit_settings)) $btit_settings['debug']=true;
     if (!array_key_exists('disable_dht',$btit_settings)) $btit_settings['disable_dht']=false;
     if (!array_key_exists('livestat',$btit_settings)) $btit_settings['livestat']=true;
@@ -185,7 +185,7 @@ $BASEURL=$btit_settings['url'];
 // tracker's announce urls, can be more than one
 $TRACKER_ANNOUNCE_URL=array();
 $TRACKER_ANNOUNCEURLS=array();
-$TRACKER_ANNOUNCE_URL=unserialize(base64_decode($btit_settings['announce']));
+$TRACKER_ANNOUNCE_URL=@unserialize(base64_decode($btit_settings['announce']));
 for($i=0,$count=count($TRACKER_ANNOUNCE_URL); $i<$count; $i++)
   {
   if (trim($TRACKER_ANNOUNCE_URL[$i])!='')

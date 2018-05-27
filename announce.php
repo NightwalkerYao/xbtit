@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // xbtit - Bittorrent tracker/frontend
 //
-// Copyright (C) 2004 - 2016  Btiteam
+// Copyright (C) 2004 - 2016  DPWS Media LTD
 //
 //    This file is part of xbtit.
 //
@@ -412,7 +412,7 @@ function start($info_hash, $ip, $port, $peer_id, $left, $downloaded=0, $uploaded
       $remotedns = 'AA';
       }
 
-    if ($left == 0)
+    if ($left === 0)
         $status = 'seeder';
     else
         $status = 'leecher';
