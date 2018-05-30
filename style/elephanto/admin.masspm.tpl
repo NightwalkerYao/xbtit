@@ -1,8 +1,6 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-cogs"></i>Mass Private Mmail</h4>
-  </div>
-  <div class="panel-body" align="center">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Mass Private Mmail</h4>
+  <div class="row">
 <if:masspm_post>
 <table class="lista" width="100%" align="center" cellpadding="2">
   <tr>

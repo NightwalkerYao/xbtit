@@ -1,8 +1,6 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-cogs"></i>Module Settings</h4>
-  </div>
-  <div class="panel-body" align="center">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Module Settings</h4>
+  <div class="row">
 <table class="lista" width="100%" cellspacing="1" cellpadding="6">
   <tr>
     <td class="header" width="25"><tag:language.ID_MODULE /></td>
@@ -33,26 +31,25 @@
 </table>
 <br />
 <form name="add_module" action="<tag:form_action />" method="post">
-<table class="lista" cellpadding="4" cellspacing="0">
-  <tr>
-    <td class="header" colspan="2"><tag:language.ADD_NEW_MODULE /></td>
-  </tr>
-  <tr>
-    <td class="lista"><tag:language.NAME /></td>
-    <td class="lista"><input type="text" name="module_name" size="40" /></td>
-  </tr>
-  <tr>
-    <td class="lista"><tag:language.TYPE /></td>
-    <td class="lista" align="left"><select name="module_type">
-    <option value="staff"><tag:language.STAFF /></option>
-    <option value="misc" selected="selected"><tag:language.MISC /></option>
-    <option value="torrent"><tag:language.TORRENT /></option>
-    <option value="style"><tag:language.STYLE /></option></select></td>
-  </tr>
-  <tr>
-    <td colspan="2" class="lista"><input type="submit" class="btn" name="confirm" value="<tag:language.FRM_CONFIRM />" /></td>
-  </tr>
-</table>
+  <div class="italic s12 l12"><tag:language.ADD_NEW_MODULE /></div>
+  <div class="col input-field">
+    <i class="material-icons prefix">title</i>
+    <input type="text" name="module_name" id="module_name" />
+    <label for="module_name"><tag:language.NAME /></label>
+  </div>
+  <div class="col input-field">
+    <i class="material-icons prefix">group_work</i>
+    <select name="module_type">
+      <option value="staff"><tag:language.STAFF /></option>
+      <option value="misc" selected="selected"><tag:language.MISC /></option>
+      <option value="torrent"><tag:language.TORRENT /></option>
+      <option value="style"><tag:language.STYLE /></option>
+    </select>
+    <label><tag:language.TYPE /></label>
+  </div>
+  <div class="col">
+    <input type="submit" class="btn" name="confirm" value="<tag:language.FRM_CONFIRM />" />
+  </div>
 </form>
     </div>
   </div>

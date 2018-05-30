@@ -1,10 +1,8 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-cogs"></i>Prune Torrents</h4>
-  </div>
-  <div class="panel-body" align="center">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Prune Torrents</h4>
+  <div class="row">
 <if:pruned_done>
-<div align="center" style="font-size:12pt"><tag:prune_done_msg /></div>
+  <div class="flow-text italic"><tag:prune_done_msg /></div>
 <else:pruned_done>
 <if:prune_list>
 <script type="text/javascript">
@@ -26,14 +24,23 @@
  }
  // -->
 </script>
-<form action="<tag:frm_action />" name="prune" method="post">
+  <form action="<tag:frm_action />" name="prune" method="post">
   <table class="lista" width="100%">
     <tr>
       <td class="header" align="center"><tag:language.FILE_NAME /></td>
       <td class="header" align="center"><tag:language.LAST_UPDATE /></td>
       <td class="header" align="center"><tag:language.SEEDS /></td>
       <td class="header" align="center"><tag:language.LEECHERS /></td>
-      <td class="header" align="center"><input type="checkbox" name="all" onclick="SetAllCheckBoxes('prune','hash[]',this.checked)" /></td>
+      <td class="header" align="center">
+        <div class="input-field">
+          <p>
+            <label for="all1">
+              <input type="checkbox" id="all1" class="filled-in" name="all" onclick="SetAllCheckBoxes('prune','hash[]',this.checked)" />
+              <span>&nbsp;&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+      </td>
     </tr>
     <if:no_records>
     <tr>
@@ -46,7 +53,16 @@
       <td class="lista" align="center"><tag:torrents[].lastupdate /></td>
       <td class="lista" align="center"><tag:torrents[].seeds /></td>
       <td class="lista" align="center"><tag:torrents[].leechers /></td>
-      <td class="lista" align="center"><input type="checkbox" name="hash[]" value="<tag:torrents[].info_hash />" /></td>
+      <td class="lista" align="center">
+        <div class="input-field">
+          <p>
+            <label for="chbox<tag:torrents[].info_hash />">
+              <input type="checkbox" name="hash[]" id="chbox<tag:torrents[].info_hash />" value="<tag:torrents[].info_hash />" />
+              <span>&nbsp;&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+      </td>
     </tr>
     </loop:torrents>
     </if:no_records>
@@ -57,14 +73,17 @@
 </form>
 <else:prune_list>
 <form action="<tag:frm_action />" name="prune" method="post">
-  <div align="center">
+  <div class="flow-text italic"><tag:language.PRUNE_TORRENTS_INFO /></div>
     <br />
-    <tag:language.PRUNE_TORRENTS_INFO />
-    <br />
-    <br />
-    <input type="text" name="days" value="<tag:prune_days />" size="10" maxlength="3" />
+  <div class="input-field col">
+    <i class="material-icons prefix">motorcycle</i>
+    <input type="text" name="days" value="<tag:prune_days />" class="validate" id="days" maxlength="3" />
+    <label for="days">Input days</label>
+  </div>
+  <div class="col">
     <input type="submit" class="btn" name="action" value="View" />
   </div>
+  <!-- </div> -->
 </form>
 </if:prune_list>
 </if:pruned_done>

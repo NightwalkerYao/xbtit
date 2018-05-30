@@ -1,8 +1,6 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-cogs"></i>Site Log</h4>
-  </div>
-  <div class="panel-body" align="center">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Site Log</h4>
+  <div class="row">
 <table class="lista" width="100%" align="center">
   <tr>
     <td class="lista" colspan="3"><tag:pager_top /></td>

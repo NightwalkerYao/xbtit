@@ -1,8 +1,6 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h4><i class="fa fa-fw fa-cogs"></i>Database Utilities</h4>
-    </div>
-    <div class="panel-body">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Database Utilities</h4>
+  <div class="row">
 <if:db_status>
 <script type="text/javascript">
 <!--
@@ -26,9 +24,18 @@
  -->
 </script>
 <form name="dbutil" action="<tag:frm_action />" method="post">
-  <table class="lista" cellspacing="1" cellpadding="0" align="center" border="0" width="100%">
+  <table class="lista strightTRs" cellspacing="1" cellpadding="0" align="center" border="0" width="100%">
     <tr>
-      <td align="center" class="header"><input type="checkbox" name="all_up" onclick="SetAllCheckBoxes('dbutil','tname[]',this.checked)" /></td>
+      <td align="center" class="header">
+        <div class="input-field">
+          <p>
+            <label for="all1">
+              <input id="all1" type="checkbox" class="filled-in" name="all_up" onclick="SetAllCheckBoxes('dbutil','tname[]',this.checked)" />
+              <span>&nbsp;&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+      </td>
       <td align="center" class="header"><tag:language.DBUTILS_TABLENAME /></td>
       <td align="center" class="header"><tag:language.DBUTILS_RECORDS /></td>
       <td align="center" class="header"><tag:language.DBUTILS_DATALENGTH /></td>
@@ -36,7 +43,16 @@
     </tr>
     <loop:tables>
     <tr>
-      <td class="lista" align="center"><input type="checkbox" name="tname[]" value="<tag:tables[].name />" /></td>
+      <td class="lista" align="center">
+        <div class="input-field">
+          <p>
+            <label for="chbox<tag:tables[].name />">
+              <input type="checkbox" name="tname[]" id="chbox<tag:tables[].name />" value="<tag:tables[].name />" />
+              <span>&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+      </td>
       <td class="lista"><tag:tables[].name /></td>
       <td class="lista" align="right"><tag:tables[].rows /></td>
       <td class="lista" align="right"><tag:tables[].length /></td>
@@ -44,7 +60,16 @@
     </tr>
     </loop:tables>
     <tr>
-      <td align="center" class="lista"><input type="checkbox" name="all_down" onclick="SetAllCheckBoxes('dbutil','tname[]',this.checked)" /></td>
+      <td align="center" class="lista">
+        <div class="input-field">
+          <p>
+            <label for="chboxAll2">
+              <input id="chboxAll2" type="checkbox" class="filled-in" name="all_down" onclick="SetAllCheckBoxes('dbutil','tname[]',this.checked)" />
+              <span>&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+      </td>
       <td align="center" class="lista"><tag:table_count />&nbsp;<tag:language.DBUTILS_TABLES /></td>
       <td align="right" class="lista"><tag:table_records />&nbsp;<tag:language.DBUTILS_RECORDS /></td>
       <td align="right" class="lista"><tag:table_bytes /></td>

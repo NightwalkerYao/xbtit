@@ -1,40 +1,38 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-cogs"></i>Hack Settings</h4>
-  </div>
-  <div class="panel-body" align="center">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Hack Settings</h4>
+  <div class="row">
 <if:ftp>
-<form name="ftp_data" action="<tag:form_action />" method="post">
-<input type="hidden" name="add_hack_folder" value="<tag:hack_folder />" />
-<div align="center"><tag:language.HACK_WHY_FTP /></div>
-<br />
-<table class="lista" cellpadding="4" cellspacing="0">
-  <tr>
-    <td class="block" colspan="4" align="center"><tag:hack_title_action /></td>
-  </tr>
-  <tr>
-    <td class="lista"><tag:language.HACK_FTP_SERVER /></td>
-    <td class="lista"><input type="text" name="ftp_server" size="40" value="localhost" /></td>
-    <td class="lista"><tag:language.HACK_FTP_PORT /></td>
-    <td class="lista"><input type="text" name="ftp_port" size="10" value="21" /></td>
-  </tr>
-  <tr>
-    <td class="lista"><tag:language.HACK_FTP_USERNAME /></td>
-    <td class="lista"><input type="text" name="ftp_user" size="40" /></td>
-    <td class="lista"><tag:language.HACK_FTP_PASSWORD /></td>
-    <td class="lista"><input type="password" name="ftp_pwd" size="40" /></td>
-  </tr>
-  <tr>
-    <td class="lista" colspan="2"><tag:language.HACK_FTP_BASEDIR /></td>
-    <td class="lista" colspan="2"><input type="text" name="ftp_basedir" size="40" />
-    </td>
-  </tr>
-  <tr>
-    <td class="block" colspan="2" align="center"><input type="submit" name="confirm" value="<tag:language.FRM_CONFIRM />" /></td>
-    <td class="block" colspan="2" align="center"><input type="submit" name="confirm" value="<tag:language.FRM_CANCEL />" /></td>
-  </tr>
-</table>
-</form>
+  <form name="ftp_data" action="<tag:form_action />" method="post">
+    <input type="hidden" name="add_hack_folder" value="<tag:hack_folder />" />
+    <div class="italic s12 l12"><tag:language.HACK_WHY_FTP /></div>
+    <br />
+    <table class="lista" cellpadding="4" cellspacing="0">
+      <tr>
+        <td class="block" colspan="4" align="center"><tag:hack_title_action /></td>
+      </tr>
+      <tr>
+        <td class="lista"><tag:language.HACK_FTP_SERVER /></td>
+        <td class="lista"><input type="text" name="ftp_server" size="40" value="localhost" /></td>
+        <td class="lista"><tag:language.HACK_FTP_PORT /></td>
+        <td class="lista"><input type="text" name="ftp_port" size="10" value="21" /></td>
+      </tr>
+      <tr>
+        <td class="lista"><tag:language.HACK_FTP_USERNAME /></td>
+        <td class="lista"><input type="text" name="ftp_user" size="40" /></td>
+        <td class="lista"><tag:language.HACK_FTP_PASSWORD /></td>
+        <td class="lista"><input type="password" name="ftp_pwd" size="40" /></td>
+      </tr>
+      <tr>
+        <td class="lista" colspan="2"><tag:language.HACK_FTP_BASEDIR /></td>
+        <td class="lista" colspan="2"><input type="text" name="ftp_basedir" size="40" />
+        </td>
+      </tr>
+      <tr>
+        <td class="block" colspan="2" align="center"><input type="submit" name="confirm" value="<tag:language.FRM_CONFIRM />" /></td>
+        <td class="block" colspan="2" align="center"><input type="submit" name="confirm" value="<tag:language.FRM_CANCEL />" /></td>
+      </tr>
+    </table>
+  </form>
 <br />
 <else:ftp>
 <script type="text/javascript">

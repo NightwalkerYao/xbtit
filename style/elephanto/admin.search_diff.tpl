@@ -1,26 +1,26 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4><i class="fa fa-fw fa-cogs"></i>Search Diff</h4>
-  </div>
-  <div class="panel-body" align="center">
+<div class="card-panel transparent">
+  <h4 class="no-margin-top"><i class="material-icons left cyan-text" style="font-size: 27pt">vpn_lock</i> Administartion Panel > Search Diff</h4>
+  <div class="row">
 <if:final_result>
 <tag:show_tasks />
 <else:final_result>
 <form method="post" action="<tag:frm_action />" name="test">
-  <table class="lista" align="center">
-    <tr>
-      <td align="center" class="header"><tag:language.SEARCH_DIFF /></td>
-    </tr>
-    <tr>
-      <td align="center" class="blocklist"><input type="text" name="diff" value="<tag:search_value />" size="13" maxlength="16" />&nbsp;<tag:search_combo_kb /></td>
-    </tr>
-    <tr>
-      <td align="center" class="blocklist"><tag:language.RANK />&nbsp;<tag:search_combo_groups /></td>
-    </tr>
-    <tr>
-      <td align="center" class="lista"><input type="submit" class="btn" name="readyto" value="Go" /></td>
-    </tr>
-  </table>
+  <div class="col input-field">
+    <i class="material-icons prefix">refresh</i>
+    <input type="text" name="diff" value="<tag:search_value />" id="diff" maxlength="16" />
+    <tag:language.SEARCH_DIFF />
+  </div>
+  <div class="col input-field">
+    <i class="material-icons prefix">arrow_dropdown</i>
+    <tag:search_combo_kb />
+    <label>&nbsp;&nbsp;&nbsp;</label>
+  </div>
+  <div class="col input-field">
+    <i class="material-icons prefix">multiline_chart</i>
+    <tag:search_combo_groups />
+    <label><tag:language.RANK /></label>
+  </div>
+  <div class="col s12 l12 center"><input type="submit" class="btn" name="readyto" value="Go" /></div>
 </form>
 <if:display_result>
 <table width="100%" class="lista" cellpadding="0" cellspacing="0">
@@ -31,8 +31,17 @@
 <form method="post" action="<tag:frm_action />" name="act">
   <table width="80%" class="lista">
     <tr>
-      <td colspan="12"><tag:language.SEARCH_DIFF_MESSAGE />&nbsp;<input name="mesajat" type="checkbox" value="evet" />
-        &nbsp;&nbsp;<input name="baslik" type="text" id="baslik" value="Write subject here" size="40" maxlength="40" />
+      <td colspan="12"><tag:language.SEARCH_DIFF_MESSAGE />&nbsp;
+        <div class="input-field">
+          <p>
+            <label for="mesajat">
+              <input name="mesajat" type="checkbox" value="evet" id="mesajat" />
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+
+        <input name="baslik" type="text" id="baslik" placeholder="Write subject here" maxlength="40" />
         <br />
         <table align="center">
           <tr>
@@ -45,10 +54,20 @@
     </tr>
     <tr>
       <td colspan="12">
-      <input name="grupdegis" type="checkbox" value="evet" />
-      <tag:language.SEARCH_DIFF_CHANGE_GROUP />&nbsp;
-      <tag:search_combo_newgroups />&nbsp;
-      <input type="submit" class="btn" name="changeug" value="Work" /></td>
+        <div class="input-field">
+          <p>
+            <label for="grupdegis">
+              <input id="grupdegis" name="grupdegis" type="checkbox" value="evet" />
+              <span>&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+        <div class="input-field">
+          <tag:search_combo_newgroups />&nbsp;
+          <label><tag:language.SEARCH_DIFF_CHANGE_GROUP />&nbsp;</label>
+        </div>
+      <input type="submit" class="btn" name="changeug" value="Work" />
+    </td>
     </tr>
     <tr>
       <td align="center" class="header"><tag:language.USER_ID /></td>
@@ -77,7 +96,16 @@
       <td class="lista" align="center"><tag:users[].last /></td>
       <td class="lista" align="center"><tag:users[].edit /></td>
       <td class="lista" align="center"><tag:users[].delete /></td>
-      <td class="lista" align="center"><input type="checkbox" name="uyedegis[]" value="<tag:users[].id />" /></td>
+      <td class="lista" align="center">
+        <div class="input-field">
+          <p>
+            <label for="chbox<tag:users[].id />">
+              <input type="checkbox" name="uyedegis[]" value="<tag:users[].id />" />
+              <span>&nbsp;&nbsp;&nbsp;</span>
+            </label>
+          </p>
+        </div>
+      </td>
     </tr>
     </loop:users>
   </table>

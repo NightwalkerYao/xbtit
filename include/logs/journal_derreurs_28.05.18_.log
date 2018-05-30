@@ -1,0 +1,7 @@
+[28-May-2018 23:44:52 Africa/Abidjan] PHP Notice:  Undefined variable: torrent_mod in /opt/lampp/htdocs/elephan.to/details.php on line 136
+[28-May-2018 23:44:53 Africa/Abidjan] PHP Notice:  Undefined variable: XBBT_USE in /opt/lampp/htdocs/elephan.to/details.php on line 271
+[28-May-2018 23:44:53 Africa/Abidjan] PHP Notice:  Undefined index: EXTERNAL in /opt/lampp/htdocs/elephan.to/details.php on line 292
+[28-May-2018 23:44:53 Africa/Abidjan] PHP Notice:  Undefined variable: comments in /opt/lampp/htdocs/elephan.to/details.php on line 341
+[28-May-2018 23:56:54 Africa/Abidjan] PHP Notice:  Undefined variable: torrent_mod in /opt/lampp/htdocs/elephan.to/details.php on line 136
+[28-May-2018 23:56:54 Africa/Abidjan] PHP Notice:  Undefined variable: XBBT_USE in /opt/lampp/htdocs/elephan.to/details.php on line 271
+[28-May-2018 23:56:54 Africa/Abidjan] PHP Notice:  Undefined index: EXTERNAL in /opt/lampp/htdocs/elephan.to/details.php on line 292
